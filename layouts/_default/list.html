@@ -1,7 +1,8 @@
 {{ define "main" }}
   <header class="page-heading">
-    <p class="eyebrow">ARCHIVE</p>
+    <p class="eyebrow"><span class="eyebrow-dot"></span> ARCHIVE</p>
     <h1>{{ .Title }}</h1>
+    <p>技术问题的解决记录，以及生活里值得留下的片段。</p>
   </header>
   <div class="post-list">
     {{ range .Pages.ByDate.Reverse }}

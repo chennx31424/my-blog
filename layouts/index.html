@@ -1,14 +1,28 @@
 {{ define "main" }}
   <section class="intro">
-    <p class="eyebrow">PERSONAL NOTES</p>
-    <h1>{{ site.Title }}</h1>
-    <p>{{ site.Params.description }}</p>
+    <div class="intro-copy">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> PERSONAL NOTES</p>
+      <h1>把问题想明白，<br><em>把生活记下来。</em></h1>
+      <p>{{ site.Params.description }}</p>
+      <div class="intro-actions">
+        <a class="button button-primary" href="{{ "posts/" | relURL }}">浏览文章 <span aria-hidden="true">→</span></a>
+        <span class="intro-note">不定期更新 · 持续积累</span>
+      </div>
+    </div>
+    <div class="intro-index" aria-hidden="true">
+      <span>01</span>
+      <span>技术 / 生活</span>
+      <span>2026 —</span>
+    </div>
   </section>
 
   <section class="post-section">
     <div class="section-heading">
-      <h2>最近文章</h2>
-      <a href="{{ "posts/" | relURL }}">查看全部</a>
+      <div>
+        <p class="eyebrow">LATEST WRITING</p>
+        <h2>最近文章</h2>
+      </div>
+      <a class="text-link" href="{{ "posts/" | relURL }}">查看全部 <span aria-hidden="true">↗</span></a>
     </div>
     <div class="post-list">
       {{ range first 10 (where site.RegularPages "Section" "posts") }}
