@@ -1,0 +1,15 @@
+baseURL: https://chennx31424.github.io/my-blog/
+locale: zh-CN
+title: 我的个人博客
+
+params:
+  description: 记录技术问题、解决方案与日常生活
+
+menu:
+  main:
+    - name: 首页
+      pageRef: /
+      weight: 10
+    - name: 文章
+      pageRef: /posts
+      weight: 20

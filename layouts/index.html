@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <section class="intro">
+    <p class="eyebrow">PERSONAL NOTES</p>
+    <h1>{{ site.Title }}</h1>
+    <p>{{ site.Params.description }}</p>
+  </section>
+
+  <section class="post-section">
+    <div class="section-heading">
+      <h2>最近文章</h2>
+      <a href="{{ "posts/" | relURL }}">查看全部</a>
+    </div>
+    <div class="post-list">
+      {{ range first 10 (where site.RegularPages "Section" "posts") }}
+        <article class="post-row">
+          <div>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with .Summary }}<p>{{ . | plainify | truncate 120 }}</p>{{ end }}
+          </div>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        </article>
+      {{ else }}
+        <p class="empty">还没有文章。</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

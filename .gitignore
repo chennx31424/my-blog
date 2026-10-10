@@ -1,0 +1,10 @@
+# Hugo build output and local preview files
+/public/
+/.hugo_build.lock
+/.hugo-server.log
+/.hugo-server-error.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
